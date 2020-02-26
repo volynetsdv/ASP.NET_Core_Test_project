@@ -1,5 +1,3 @@
-
-using System;
 using System.Threading.Tasks;
 using manufacturer_api_dotnet.Models;
 using manufacturer_api_dotnet.Services;
@@ -26,8 +24,6 @@ namespace manufacturer_api_dotnet.Controllers
             var manufacturer = await _manufacturerService.FirstManufacturerFromLargestGroup();
 
             return await _manufacturerService.ManufacturerInfo(manufacturer.Mfr_ID);
-            //    should return JSON with detailted info about manufactory
-
         }
 
     }

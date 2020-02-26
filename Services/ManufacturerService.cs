@@ -2,8 +2,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Linq;
 using manufacturer_api_dotnet.Models;
-using Newtonsoft.Json;
-using System;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
@@ -13,12 +11,10 @@ namespace manufacturer_api_dotnet.Services
     public class ManufacturerService : IManufacturerService
     {
         private readonly HttpClient _httpClient;
-        //private readonly IConfiguration _configuration;
         private readonly string _baseUrl;
 
         public ManufacturerService(HttpClient httpClient, IConfiguration configuration)
         {
-            //_configuration = configuration;
             _baseUrl = configuration["ApiUri"];
             _httpClient = httpClient;
         }
